@@ -1,0 +1,78 @@
+$main_background:#807d80;
+$height:auto;
+$button_colour:#2e2b2e;
+
+.backgroud_color{
+    background-color: $main_background;
+    height: $height;
+   min-height: 100vh;
+   max-width: auto;
+   width: auto;
+   .css-1rwt2y5-MuiButtonBase-root-MuiButton-root{
+    background-color: rgb(10, 9, 9);
+    border: 1px solid rgb(255 255 255 / 50%);
+   }
+   .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+    background-color: #a7a2a2;
+   }
+}
+.backgroud_color_text{
+    color: antiquewhite;
+}
+.css-15wwp11-MuiTableHead-root{
+    
+    
+    left: 0;
+    width: 10%;
+   z-index: 999px;
+    box-sizing: border-box;
+   
+}
+// .css-19b2pyg-MuiPaper-root-MuiTableContainer-root{
+//     max-height: 60px !important;
+// }
+// .css-19b2pyg-MuiPaper-root-MuiTableContainer-root{
+// max-height: 668px !important;
+// max-width: 1600px !important;
+// padding-left: 40px;
+// padding-right: 10px;
+// background-color: #80808080;
+// }
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    background-color: #050505 !important;
+    color: rgb(218, 218, 218) !important;
+  
+}
+.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop{
+    background-color:#412b2b !important;
+}
+.css-lc2yqr-MuiButtonBase-root-MuiIconButton-root{
+    top: 0px !important;
+    right: 0px !important;
+}
+
+.css-apqrd9-MuiTableBody-root{
+   padding-top: 20vh !important;
+   top: 10vh;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    background-color: #000;
+    color: rgb(255 237 237 / 87%)
+}
+.css-i4bv87-MuiSvgIcon-root{
+    width: 1.5em !important;
+    height:1.5em !important;
+    font-size: 2m !important;
+}
+td {
+    border: 1px solid;
+    height: 20px;
+  }
+
+tr{
+    border:  1px solid white;
+}
+// .css-i4bv87-MuiSvgIcon-root{
+//     color: #000;
+//     width: auto;
+// }
