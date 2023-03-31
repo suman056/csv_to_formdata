@@ -262,7 +262,7 @@ React.useEffect(()=>{
         >
           <div className="backgroud_color_text"><SaveAltIcon/></div>
         </Button></div>:<div></div>}
-      
+      <div className="table_class">
       <TableContainer
         component={Paper}
         sx={{ maxHeight: 668, maxWidth: 1600 ,pl:'10px',pr:"10px",bgcolor:"#808080",pl:5}}
@@ -310,6 +310,7 @@ React.useEffect(()=>{
           </TableBody>
         </Table>
       </TableContainer>
+      </div>
     </div>
   );
 }
