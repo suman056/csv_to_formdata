@@ -5,7 +5,8 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogActions from "@mui/material/DialogActions";
 import UploadIcon from "@mui/icons-material/Upload";
-
+import SaveIcon from '@mui/icons-material/Save';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Paper from "@mui/material/Paper";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
@@ -16,7 +17,8 @@ import { v4 as uuidv4 } from "uuid";
 import { TableContainer } from "@mui/material";
 import "./app_convert_table.scss";
 import EditIcon from '@mui/icons-material/Edit';
-import SaveAltIcon from '@mui/icons-material/SaveAlt';
+import { FileDownload } from "@mui/icons-material";
+
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -200,7 +202,35 @@ React.useEffect(()=>{
  const editableOption=()=>{
   setIsEditable(true)
  }
-
+const  FileDownload=(fileItems,headerData)=>{
+   let finalData=jsonToCsv(fileItems,headerData)
+   console.log(finalData)
+  
+  const blob = new Blob([finalData], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.download = `${title}-modified.csv`;
+  link.href = url;
+  link.click();
+}
+const jsonToCsv=(fileItems,headerData)=>{
+  let finalCsvFile
+  let newHeaderData=headerData.join(",")
+  let newRowData=""
+  let rowData=[]
+  for(let i=0;i<fileItems.length;i++){
+    let everyRowData=[]
+    for(let j=0;j<headerData.length;j++){
+      everyRowData.push(fileItems[i][headerData[j]])
+    }
+    let newEveryRowData=everyRowData.join(",")
+    rowData.push(newEveryRowData)
+  }
+  
+    newRowData=rowData.join("\n")
+    finalCsvFile=newHeaderData+"\n"+newRowData
+    return finalCsvFile
+}
   const upLoadButtonClick=()=>{
          setIsEditable(false)
          console.log(isEditable)
@@ -260,8 +290,15 @@ React.useEffect(()=>{
           onClick={upLoadButtonClick}
           className="buttonColorchange" 
         >
-          <div className="backgroud_color_text"><SaveAltIcon/></div>
-        </Button></div>:<div></div>}
+          <div className="backgroud_color_text"><SaveIcon/></div>
+        </Button>
+        <Button
+          onClick={()=>FileDownload(fileItems,headersName)}
+          className="buttonColorchange" 
+        >
+          <div className="backgroud_color_text"><FileDownloadIcon/></div>
+        </Button>
+        </div>:<div></div>}
       <div className="table_class">
       <TableContainer
         component={Paper}
